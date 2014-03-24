@@ -1,0 +1,7 @@
+<launch>
+  <node name="omni_teleop" pkg="teleoperation" type="teleop_omni" output="screen">
+    <remap from="cmd_vel" to="/RosAria/cmd_vel"/>
+    <rosparam command="load" file="$(find teleoperation)/params/master_params.yaml" />
+    <rosparam command="load" file="$(find teleoperation)/params/slave_params.yaml" />
+  </node>
+</launch>
